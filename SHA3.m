@@ -10,7 +10,6 @@ HASH_type = 'SHAKE256'; % hash type
 HASH_len = 2222; % 
 s_input = 'abc';        % massage input
 %
-%
 % d = 0;
 % dd = 0;
 % subtype = '';
@@ -41,13 +40,13 @@ elseif strcmp(HASH_type, 'SHAKE256') == 1
 end
 %
 % fixed coefficient
+%
 b = 1600;  % total bits = 25*25*64 = 1600
 nr = 24;   % number of rounds
 c = 2 * d; % capacity
 r = b - c; % for every r-bit a section
 w = b / 25;   % depth of the state array = 1600 / 25 = 64
 LL = log2(w); % use LL to avoid naming collision in just L
-%
 %
 % Lk: , k: 
 [Lk, k] = input_string_2_L_array(s_input, d, subtype);
@@ -80,6 +79,7 @@ for ik = 1 : k
 end
 %
 % final state
+%
 fprintf('final state \n');
 for ix = 0 : 4
     for iy = 0 : 4
@@ -141,12 +141,11 @@ elseif strcmp(subtype, 'XOF') == 1
     HASH = HASH(1 : d8 * 2);
 end
 HASH = lower(HASH);
-%
-%
 fprintf('HASH value: %s \n', HASH);
-%
 
+%
 % testing f_function
+%
 % L = char(); % Lane state array
 % for ix = 0 : 4
 %     for iy = 0 : 4
@@ -159,5 +158,4 @@ fprintf('HASH value: %s \n', HASH);
 %         fprintf('LLL(%d, %d) = %s\n',ix, iy, LLL(ix + 1, iy + 1, :));
 %     end
 % end
-
 
