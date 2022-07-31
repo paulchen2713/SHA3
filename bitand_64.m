@@ -21,7 +21,7 @@ function out = bitand_64(a, b)
     b_left_dec  = uint32(hex2dec(b_left));
     b_right_dec = uint32(hex2dec(b_right));
 
-    % do bit-and opertion separately
+    % do bit-and opertion separately 
     a_b_left_dec  = bitand(a_left_dec,  b_left_dec);
     a_b_right_dec = bitand(a_right_dec, b_right_dec);
 
