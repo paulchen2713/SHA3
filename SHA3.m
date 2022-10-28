@@ -142,6 +142,7 @@ elseif strcmp(subtype, 'XOF') == 1
 end
 HASH = lower(HASH);
 fprintf('HASH value: %s \n', HASH);
+%
 
 %
 % testing f_function
